@@ -31,7 +31,7 @@ const AddList = ({ colors, onAdd }) => {
 		}
 		setIsLoading(true);
 		axios
-			.post('https://react-todo-lac-eta.vercel.app/lists', {
+			.post('http://localhost:3001/lists', {
 				name: inputValue,
 				colorId: selectedColor
 			})

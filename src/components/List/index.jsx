@@ -11,7 +11,7 @@ const List = ({ items, isRemovable, onClick, onRemove, onClickItem, activeItem }
 
 	const removeList = item => {
 		if (window.confirm('Удалить список?')) {
-			axios.delete('https://react-todo-lac-eta.vercel.app/lists/' + item.id).then(() => {
+			axios.delete('http://localhost:3001/lists/' + item.id).then(() => {
 				onRemove(item.id);
 			});
 		}

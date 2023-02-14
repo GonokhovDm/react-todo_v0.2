@@ -21,7 +21,7 @@ const AddTaskForm = ({ list, onAddTask }) => {
     };
     setIsLoading(true);
     axios
-      .post('https://react-todo-lac-eta.vercel.app/tasks', obj)
+      .post('http://localhost:3001/tasks', obj)
       .then(({ data }) =>{
         onAddTask(list.id, data);
         toggleFormVisible('');

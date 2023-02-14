@@ -15,12 +15,12 @@ function App() {
 
 	useEffect(() => {
 		axios
-			.get('react-todo-lac-eta.vercel.app/lists?_expand=color&_embed=tasks')
+			.get('http://localhost:3001/lists?_expand=color&_embed=tasks')
 			.then(({ data }) => {
 				setLists(data);
 			});
 		axios
-			.get('react-todo-lac-eta.vercel.app/colors')
+			.get('http://localhost:3001/colors')
 			.then(({ data }) => {
 				setColors(data);
 			});
@@ -51,7 +51,7 @@ function App() {
 			});
 			setLists(newLists);
 			axios
-			.delete('react-todo-lac-eta.vercel.app/tasks/' + taskId)
+			.delete('http://localhost:3001/tasks/' + taskId)
 			.catch(() => {
 				alert('Не удалось удалить задачу');
 			});
@@ -78,7 +78,7 @@ function App() {
 		});
 		setLists(newLists);
 		axios
-		.patch('https://react-todo-lac-eta.vercel.app/tasks/' + taskObj.id, {text: newTaskText})
+		.patch('http://localhost:3001/tasks/' + taskObj.id, {text: newTaskText})
 		.catch(() => {
 			alert('Не удалось изменить задачу');
 		});
@@ -98,7 +98,7 @@ function App() {
 		});
 		setLists(newLists);
 		axios
-		.patch('https://react-todo-lac-eta.vercel.app/tasks/' + taskId, {
+		.patch('http://localhost:3001/tasks/' + taskId, {
 			completed
 		})
 		.catch(() => {
