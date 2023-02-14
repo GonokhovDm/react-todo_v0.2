@@ -14,7 +14,7 @@ const Tasks = ({ list, onEditTitle, onAddTask, onEditTask, onCompleteTask, onRem
 		if (newTitle) {
 			onEditTitle(list.id, newTitle);
 			axios
-			.patch('http://localhost:3001/lists/' + list.id, {
+			.patch('https://react-todo-lac-eta.vercel.app/lists/' + list.id, {
 				name: newTitle
 			})
 			.catch(() => {

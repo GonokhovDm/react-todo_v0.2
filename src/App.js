@@ -78,7 +78,7 @@ function App() {
 		});
 		setLists(newLists);
 		axios
-		.patch('http://localhost:3001/tasks/' + taskObj.id, {text: newTaskText})
+		.patch('https://react-todo-lac-eta.vercel.app/tasks/' + taskObj.id, {text: newTaskText})
 		.catch(() => {
 			alert('Не удалось изменить задачу');
 		});
@@ -98,7 +98,7 @@ function App() {
 		});
 		setLists(newLists);
 		axios
-		.patch('http://localhost:3001/tasks/' + taskId, {
+		.patch('https://react-todo-lac-eta.vercel.app/tasks/' + taskId, {
 			completed
 		})
 		.catch(() => {
