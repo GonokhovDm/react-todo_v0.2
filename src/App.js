@@ -15,12 +15,12 @@ function App() {
 
 	useEffect(() => {
 		axios
-			.get('http://localhost:3001/lists?_expand=color&_embed=tasks')
+			.get('react-todo-lac-eta.vercel.app/lists?_expand=color&_embed=tasks')
 			.then(({ data }) => {
 				setLists(data);
 			});
 		axios
-			.get('http://localhost:3001/colors')
+			.get('react-todo-lac-eta.vercel.app/colors')
 			.then(({ data }) => {
 				setColors(data);
 			});
@@ -51,7 +51,7 @@ function App() {
 			});
 			setLists(newLists);
 			axios
-			.delete('http://localhost:3001/tasks/' + taskId)
+			.delete('react-todo-lac-eta.vercel.app/tasks/' + taskId)
 			.catch(() => {
 				alert('Не удалось удалить задачу');
 			});
